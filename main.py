@@ -1,5 +1,5 @@
 import cv2
-
+"""         bilgisayarin kamerasi için            """
 from cvzone.HandTrackingModule import HandDetector
 kamera = cv2.VideoCapture(0)
 detector = HandDetector()
@@ -16,12 +16,12 @@ cv2.destroyAllWindows()
 
 
 
-"""    
+"""
 img = cv2.imread("a.jpeg")
 s = 60
-img= cv2.resize(img, (9*s, 16*s))
+img= cv2.resize(img, (9*s, 16*s))   
 hands,img=detector.findHands(img)
-
+                                            secili fotoğraflar icin
 cv2.imshow("Resim",img)
 
 cv2.waitKey(0)
