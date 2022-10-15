@@ -1,30 +1,30 @@
-import cv2
+import cv2 as q
 """         bilgisayarin kamerasi için            """
 from cvzone.HandTrackingModule import HandDetector
-kamera = cv2.VideoCapture(0)
+kamera = q.VideoCapture(0)
 detector = HandDetector()
 c = input("c/b: ")
 if(c == "c"):
     while True:
         ret,kare=kamera.read()
-        kare =cv2.flip(kare,1)
+        kare =q.flip(kare,1)
         hands,kare=detector.findHands(kare,flipType=False)
-        cv2.imshow("kamera",kare)
-        if cv2.waitKey(1) & 0xFF == ord("q"):
+        q.imshow("kamera",kare)
+        if q.waitKey(1) & 0xFF == ord("q"):
             break
     kamera.release()
-    cv2.destroyAllWindows()
+    q.destroyAllWindows()
 
 
 
 
 elif(c == "b"):
-    img = cv2.imread("a.jpeg")
+    img = q.imread("a.jpeg")
     s = 60
-    img= cv2.resize(img, (9*s, 16*s))   
+    img= q.resize(img, (9*s, 16*s))   
     hands,img=detector.findHands(img)
     """                                            secili fotoğraflar icin"""
-    cv2.imshow("Resim",img)
+    q.imshow("Resim",img)
 
-    cv2.waitKey(0)
-    cv2.destrolAllWindows()
+    q.waitKey(0)
+    q.destrolAllWindows()
